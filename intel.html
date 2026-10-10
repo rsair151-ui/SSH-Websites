@@ -1,0 +1,1240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SSH - Save and Serve the Hindu | సేవ్ అండ్ సెర్వ్ ది హిందూ</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Google Fonts: Cinzel Decorative, Noto Sans Telugu, Poppins -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Noto+Sans+Telugu:wght@400;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            saffron: {
+              DEFAULT: '#FF6F00',
+              deep: '#D84315',
+              light: '#FFA000',
+              glow: '#FFE082'
+            },
+            maroon: {
+              DEFAULT: '#72081C',
+              dark: '#4A0512',
+              light: '#9E1C32'
+            },
+            gold: {
+              DEFAULT: '#D4AF37',
+              light: '#F3E5AB',
+              dark: '#AA820A'
+            },
+            templeBg: '#FDFBF7'
+          },
+          fontFamily: {
+            serif: ['Cinzel', 'serif'],
+            telugu: ['Noto Sans Telugu', 'sans-serif'],
+            sans: ['Poppins', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      background-color: #FDFBF7;
+      color: #2D2424;
+      font-family: 'Poppins', 'Noto Sans Telugu', sans-serif;
+    }
+    .temple-border {
+      border: 2px solid #D4AF37;
+      box-shadow: 0 0 15px rgba(212, 175, 55, 0.2);
+    }
+    .gold-gradient-text {
+      background: linear-gradient(135deg, #FFD54F, #D4AF37, #FF8F00);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .saffron-gradient {
+      background: linear-gradient(135deg, #72081C 0%, #A3122A 40%, #E65100 100%);
+    }
+    .ornament-pattern {
+      background-image: radial-gradient(#D4AF37 0.75px, transparent 0.75px), radial-gradient(#D4AF37 0.75px, #FDFBF7 0.75px);
+      background-size: 30px 30px;
+      background-position: 0 0, 15px 15px;
+      opacity: 0.15;
+    }
+  </style>
+</head>
+<body class="antialiased overflow-x-hidden selection:bg-saffron selection:text-white">
+
+  <!-- TOP BAR -->
+  <div class="bg-maroon-dark text-gold-light text-xs sm:text-sm py-2 px-4 border-b border-gold/30">
+    <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-2">
+      <div class="flex items-center space-x-4">
+        <span class="flex items-center gap-1.5"><i class="fas fa-om text-gold"></i> <span data-i18n="tagline">Dharmo Rakshati Rakshitah</span></span>
+        <span class="hidden md:inline text-gold/40">|</span>
+        <span class="hidden md:inline"><i class="fas fa-bullhorn text-saffron-light mr-1"></i> <span data-i18n="headline">Defending Rights • Building Unity • Serving Dharma</span></span>
+      </div>
+      <div class="flex items-center space-x-3">
+        <!-- Language Switcher Button -->
+        <button id="lang-toggle-btn" onclick="toggleLanguage()" class="bg-saffron hover:bg-saffron-deep text-white px-3 py-1 rounded-full text-xs font-semibold tracking-wider flex items-center space-x-1 transition shadow">
+          <i class="fas fa-language text-sm"></i>
+          <span id="lang-btn-text">తెలుగు (Telugu)</span>
+        </button>
+        <a href="#donate" class="bg-gold hover:bg-gold-dark text-maroon-dark font-bold px-3 py-1 rounded-full text-xs transition shadow flex items-center gap-1">
+          <i class="fas fa-hand-holding-heart"></i> <span data-i18n="navPledge">Pledge</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAVIGATION BAR -->
+  <nav class="sticky top-0 z-50 bg-maroon/95 backdrop-blur shadow-lg border-b-2 border-gold text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        <!-- Logo & Brand -->
+        <a href="#home" class="flex items-center space-x-3">
+          <div class="w-12 h-12 rounded-full border-2 border-gold bg-saffron flex items-center justify-center text-white shadow-md text-2xl font-serif">
+            ॐ
+          </div>
+          <div>
+            <div class="font-serif text-xl sm:text-2xl font-bold tracking-wider text-gold-light">SSH</div>
+            <div class="text-xs text-saffron-light tracking-wide font-medium" data-i18n="brandSub">Save and Serve the Hindu</div>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation Links -->
+        <div class="hidden lg:flex items-center space-x-6 text-sm font-medium">
+          <a href="#home" class="hover:text-gold transition" data-i18n="navHome">Home</a>
+          <a href="#about" class="hover:text-gold transition" data-i18n="navAbout">About Us</a>
+          <a href="#bulletin" class="hover:text-gold transition" data-i18n="navBulletin">Information Hub</a>
+          <a href="#teachings" class="hover:text-gold transition" data-i18n="navTeachings">Beliefs</a>
+          <a href="#events" class="hover:text-gold transition" data-i18n="navEvents">Events</a>
+          <a href="#gallery" class="hover:text-gold transition" data-i18n="navGallery">Gallery</a>
+          <a href="#contact" class="hover:text-gold transition" data-i18n="navContact">Contact</a>
+          <a href="#donate" class="bg-saffron hover:bg-saffron-deep text-white px-4 py-2 rounded-lg font-bold shadow-md transition" data-i18n="navDonate">Donate / Seva</a>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <div class="lg:hidden flex items-center">
+          <button id="mobile-menu-btn" onclick="toggleMobileMenu()" class="text-gold-light text-2xl focus:outline-none p-2">
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Dropdown Menu -->
+    <div id="mobile-menu" class="hidden lg:hidden bg-maroon-dark px-4 pt-2 pb-6 space-y-3 border-t border-gold/30">
+      <a href="#home" onclick="toggleMobileMenu()" class="block text-white hover:text-gold py-1" data-i18n="navHome">Home</a>
+      <a href="#about" onclick="toggleMobileMenu()" class="block text-white hover:text-gold py-1" data-i18n="navAbout">About Us</a>
+      <a href="#bulletin" onclick="toggleMobileMenu()" class="block text-white hover:text-gold py-1" data-i18n="navBulletin">Information Hub</a>
+      <a href="#teachings" onclick="toggleMobileMenu()" class="block text-white hover:text-gold py-1" data-i18n="navTeachings">Beliefs</a>
+      <a href="#events" onclick="toggleMobileMenu()" class="block text-white hover:text-gold py-1" data-i18n="navEvents">Events</a>
+      <a href="#gallery" onclick="toggleMobileMenu()" class="block text-white hover:text-gold py-1" data-i18n="navGallery">Gallery</a>
+      <a href="#contact" onclick="toggleMobileMenu()" class="block text-white hover:text-gold py-1" data-i18n="navContact">Contact</a>
+      <a href="#donate" onclick="toggleMobileMenu()" class="block bg-saffron text-white text-center py-2 rounded font-bold" data-i18n="navDonate">Donate / Seva</a>
+    </div>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <section id="home" class="relative saffron-gradient text-white pt-20 pb-28 px-4 overflow-hidden">
+    <div class="absolute inset-0 ornament-pattern pointer-events-none"></div>
+    <div class="max-w-7xl mx-auto relative z-10 text-center">
+      <div class="inline-flex items-center gap-2 bg-black/30 border border-gold/50 px-4 py-1.5 rounded-full text-gold-light text-xs sm:text-sm uppercase tracking-widest mb-6">
+        <i class="fas fa-shield-alt text-saffron-light"></i>
+        <span data-i18n="heroBadge">United for Dignity, Heritage & Rights</span>
+      </div>
+
+      <h1 class="font-serif text-3xl sm:text-5xl lg:text-6xl font-extrabold leading-tight tracking-wide mb-6">
+        <span data-i18n="heroTitle1">Save and Serve the Hindu</span> <br>
+        <span class="gold-gradient-text" data-i18n="heroTitle2">సేవ్ అండ్ సెర్వ్ ది హిందూ</span>
+      </h1>
+
+      <p class="max-w-3xl mx-auto text-base sm:text-xl text-gray-200 mb-10 font-light leading-relaxed" data-i18n="heroDesc">
+        Empowering our community, defending sacred Hindu rights, inspiring youth, and standing together through selfless seva. Stay informed, stay united, and uphold Sanatana Dharma.
+      </p>
+
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="#bulletin" class="w-full sm:w-auto bg-gold hover:bg-gold-dark text-maroon-dark font-bold px-8 py-3.5 rounded-lg text-base shadow-xl transition flex items-center justify-center gap-2">
+          <i class="fas fa-newspaper"></i> <span data-i18n="heroBtnInfo">Explore Information Hub</span>
+        </a>
+        <a href="#donate" class="w-full sm:w-auto bg-maroon-dark hover:bg-black border-2 border-gold text-white font-bold px-8 py-3.5 rounded-lg text-base shadow-xl transition flex items-center justify-center gap-2">
+          <i class="fas fa-hand-holding-heart text-gold"></i> <span data-i18n="heroBtnPledge">Pledge Support</span>
+        </a>
+        <button onclick="openUploadModal()" class="w-full sm:w-auto bg-saffron hover:bg-saffron-deep text-white font-bold px-6 py-3.5 rounded-lg text-base shadow-xl transition flex items-center justify-center gap-2 border border-white/20">
+          <i class="fas fa-plus-circle"></i> <span data-i18n="heroBtnUpload">Post Update</span>
+        </button>
+      </div>
+
+      <!-- Quick Metrics -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-16 max-w-4xl mx-auto text-center">
+        <div class="bg-black/30 backdrop-blur border border-gold/30 p-4 rounded-xl">
+          <div class="text-2xl sm:text-3xl font-bold text-gold">25,000+</div>
+          <div class="text-xs sm:text-sm text-gray-300" data-i18n="statMembers">Active Members</div>
+        </div>
+        <div class="bg-black/30 backdrop-blur border border-gold/30 p-4 rounded-xl">
+          <div class="text-2xl sm:text-3xl font-bold text-gold">140+</div>
+          <div class="text-xs sm:text-sm text-gray-300" data-i18n="statTemples">Temples Supported</div>
+        </div>
+        <div class="bg-black/30 backdrop-blur border border-gold/30 p-4 rounded-xl">
+          <div class="text-2xl sm:text-3xl font-bold text-gold">24/7</div>
+          <div class="text-xs sm:text-sm text-gray-300" data-i18n="statHelpline">Legal & Rights Helpline</div>
+        </div>
+        <div class="bg-black/30 backdrop-blur border border-gold/30 p-4 rounded-xl">
+          <div class="text-2xl sm:text-3xl font-bold text-gold">500+</div>
+          <div class="text-xs sm:text-sm text-gray-300" data-i18n="statSeva">Seva Camps Held</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT SECTION -->
+  <section id="about" class="py-20 px-4 bg-templeBg">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <div class="text-saffron font-bold text-sm uppercase tracking-widest mb-2" data-i18n="aboutSubtitle">Who We Are</div>
+        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-maroon" data-i18n="aboutTitle">Guardians of Dharma & Community Unity</h2>
+        <div class="w-24 h-1 bg-gold mx-auto mt-4 mb-4 rounded-full"></div>
+        <p class="text-gray-700 leading-relaxed" data-i18n="aboutLead">
+          Save and Serve the Hindu (SSH) is a grassroots organization founded to bring every Hindu together under the sacred banner of unity, justice, and heritage preservation.
+        </p>
+      </div>
+
+      <!-- 4 Pillars Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="bg-white p-6 rounded-xl border-t-4 border-saffron shadow-md hover:shadow-xl transition">
+          <div class="w-14 h-14 rounded-full bg-saffron/10 text-saffron flex items-center justify-center text-2xl mb-4">
+            <i class="fas fa-shield-halved"></i>
+          </div>
+          <h3 class="font-serif font-bold text-xl text-maroon mb-2" data-i18n="pillar1Title">Protect Hindu Rights</h3>
+          <p class="text-sm text-gray-600 leading-relaxed" data-i18n="pillar1Desc">
+            Defending cultural rights, fighting against temple mismanagement, and providing fast legal support to affected families.
+          </p>
+        </div>
+
+        <div class="bg-white p-6 rounded-xl border-t-4 border-gold shadow-md hover:shadow-xl transition">
+          <div class="w-14 h-14 rounded-full bg-gold/10 text-gold-dark flex items-center justify-center text-2xl mb-4">
+            <i class="fas fa-users"></i>
+          </div>
+          <h3 class="font-serif font-bold text-xl text-maroon mb-2" data-i18n="pillar2Title">Forge Collective Unity</h3>
+          <p class="text-sm text-gray-600 leading-relaxed" data-i18n="pillar2Desc">
+            Bridging caste, regional, and social divisions to unite all Hindus into one resilient, supportive brotherhood.
+          </p>
+        </div>
+
+        <div class="bg-white p-6 rounded-xl border-t-4 border-maroon shadow-md hover:shadow-xl transition">
+          <div class="w-14 h-14 rounded-full bg-maroon/10 text-maroon flex items-center justify-center text-2xl mb-4">
+            <i class="fas fa-bullhorn"></i>
+          </div>
+          <h3 class="font-serif font-bold text-xl text-maroon mb-2" data-i18n="pillar3Title">Information & Awareness</h3>
+          <p class="text-sm text-gray-600 leading-relaxed" data-i18n="pillar3Desc">
+            Transparent dissemination of facts, history, government policies, and awareness campaigns so every devotee stays informed.
+          </p>
+        </div>
+
+        <div class="bg-white p-6 rounded-xl border-t-4 border-saffron-deep shadow-md hover:shadow-xl transition">
+          <div class="w-14 h-14 rounded-full bg-saffron-deep/10 text-saffron-deep flex items-center justify-center text-2xl mb-4">
+            <i class="fas fa-hand-holding-heart"></i>
+          </div>
+          <h3 class="font-serif font-bold text-xl text-maroon mb-2" data-i18n="pillar4Title">Seva & Heritage Preservation</h3>
+          <p class="text-sm text-gray-600 leading-relaxed" data-i18n="pillar4Desc">
+            Revitalizing ancient temples, providing flood/disaster relief, running Gaushalas, and conducting cultural gurukuls.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INFORMATION BULLETIN & EASY UPLOAD SECTION -->
+  <section id="bulletin" class="py-20 px-4 bg-white border-y border-gold/30">
+    <div class="max-w-7xl mx-auto">
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+        <div>
+          <div class="text-saffron font-bold text-sm uppercase tracking-widest mb-1" data-i18n="infoSubtitle">Public Bulletin Board</div>
+          <h2 class="font-serif text-3xl sm:text-4xl font-bold text-maroon" data-i18n="infoTitle">Latest Information & Announcements</h2>
+          <p class="text-gray-600 text-sm mt-2" data-i18n="infoDesc">
+            Live updates, advocacy bulletins, and guidelines for the Hindu community.
+          </p>
+        </div>
+        <div class="flex flex-wrap items-center gap-3">
+          <!-- Filter buttons -->
+          <div class="inline-flex rounded-lg border border-gray-200 bg-gray-50 p-1 text-xs font-semibold">
+            <button onclick="filterNews('all')" class="filter-tab active px-3 py-1.5 rounded-md bg-maroon text-white" id="filter-all">All</button>
+            <button onclick="filterNews('rights')" class="filter-tab px-3 py-1.5 rounded-md text-gray-700 hover:text-maroon" id="filter-rights">Rights & Legal</button>
+            <button onclick="filterNews('seva')" class="filter-tab px-3 py-1.5 rounded-md text-gray-700 hover:text-maroon" id="filter-seva">Temple Seva</button>
+          </div>
+          <!-- Easy Upload Button -->
+          <button onclick="openUploadModal()" class="bg-saffron hover:bg-saffron-deep text-white px-4 py-2 rounded-lg text-xs sm:text-sm font-bold flex items-center gap-2 shadow transition">
+            <i class="fas fa-plus-circle"></i> <span data-i18n="btnUploadPost">Upload Information</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Dynamic News Container -->
+      <div id="news-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Javascript renders articles here -->
+      </div>
+    </div>
+  </section>
+
+  <!-- TEACHINGS & BELIEFS -->
+  <section id="teachings" class="py-20 px-4 bg-templeBg">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <div class="text-saffron font-bold text-sm uppercase tracking-widest mb-2" data-i18n="teachingsSubtitle">Timeless Wisdom</div>
+        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-maroon" data-i18n="teachingsTitle">Core Principles & Dharma</h2>
+        <div class="w-24 h-1 bg-gold mx-auto mt-4 mb-4 rounded-full"></div>
+        <p class="text-gray-700 leading-relaxed" data-i18n="teachingsLead">
+          Anchored in the Vedas, Upanishads, and the Bhagavad Gita, SSH upholds moral courage, selfless action, and spiritual clarity.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="bg-white p-8 rounded-2xl border border-gold/30 shadow-sm hover:shadow-lg transition">
+          <div class="text-3xl text-saffron mb-4"><i class="fas fa-balance-scale"></i></div>
+          <h3 class="font-serif text-xl font-bold text-maroon mb-3" data-i18n="belief1Title">Dharmo Rakshati Rakshitah</h3>
+          <p class="text-sm text-gray-600 leading-relaxed" data-i18n="belief1Desc">
+            "Dharma protects those who protect it." When we uphold truth, righteousness, and respect for our ancient ways, spiritual strength shields our community.
+          </p>
+        </div>
+
+        <div class="bg-white p-8 rounded-2xl border border-gold/30 shadow-sm hover:shadow-lg transition">
+          <div class="text-3xl text-gold mb-4"><i class="fas fa-hands-helping"></i></div>
+          <h3 class="font-serif text-xl font-bold text-maroon mb-3" data-i18n="belief2Title">Sanghe Shakti Kaliyuge</h3>
+          <p class="text-sm text-gray-600 leading-relaxed" data-i18n="belief2Desc">
+            "In the age of Kaliyuga, supreme power resides in collective unity." Segregation weakens our voice; our strength lies in collective brotherhood and mutual support.
+          </p>
+        </div>
+
+        <div class="bg-white p-8 rounded-2xl border border-gold/30 shadow-sm hover:shadow-lg transition">
+          <div class="text-3xl text-maroon mb-4"><i class="fas fa-heart"></i></div>
+          <h3 class="font-serif text-xl font-bold text-maroon mb-3" data-i18n="belief3Title">Nara Seva, Narayana Seva</h3>
+          <p class="text-sm text-gray-600 leading-relaxed" data-i18n="belief3Desc">
+            "Serving humanity is serving the Supreme Lord." Active charity, feeding the hungry (Annadanam), and safeguarding defenseless beings are our highest spiritual practices.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EVENTS & FESTIVALS -->
+  <section id="events" class="py-20 px-4 bg-maroon-dark text-white relative">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <div class="text-gold font-bold text-sm uppercase tracking-widest mb-2" data-i18n="eventsSubtitle">Get Involved</div>
+        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-gold-light" data-i18n="eventsTitle">Upcoming Events & Maha Utsavams</h2>
+        <div class="w-24 h-1 bg-saffron mx-auto mt-4 mb-4 rounded-full"></div>
+        <p class="text-gray-300" data-i18n="eventsLead">
+          Join our cultural festivals, awareness conferences, youth workshops, and grassroots rallies.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- Event Card 1 -->
+        <div class="bg-maroon/70 border border-gold/30 rounded-xl p-6 flex flex-col justify-between">
+          <div>
+            <div class="flex justify-between items-center mb-4">
+              <span class="bg-saffron text-white text-xs font-bold px-3 py-1 rounded-full uppercase" data-i18n="evCatAdvocacy">Advocacy</span>
+              <span class="text-gold text-xs font-semibold"><i class="far fa-calendar mr-1"></i> Nov 15, 2026</span>
+            </div>
+            <h3 class="font-serif text-xl font-bold text-white mb-2" data-i18n="ev1Title">Statewide Hindu Rights & Legal Aid Meet</h3>
+            <p class="text-sm text-gray-300 leading-relaxed mb-4" data-i18n="ev1Desc">
+              Free legal guidance for temple protection, heritage litigation, and rights violation redressal.
+            </p>
+            <div class="text-xs text-gold-light mb-4">
+              <i class="fas fa-map-marker-alt mr-1"></i> <span data-i18n="ev1Loc">Hyderabad / Online Stream</span>
+            </div>
+          </div>
+          <button onclick="registerEvent('Statewide Hindu Rights & Legal Aid Meet')" class="w-full bg-gold hover:bg-gold-dark text-maroon-dark font-bold py-2 rounded text-sm transition" data-i18n="btnRegister">
+            Register for Event
+          </button>
+        </div>
+
+        <!-- Event Card 2 -->
+        <div class="bg-maroon/70 border border-gold/30 rounded-xl p-6 flex flex-col justify-between">
+          <div>
+            <div class="flex justify-between items-center mb-4">
+              <span class="bg-gold text-maroon-dark text-xs font-bold px-3 py-1 rounded-full uppercase" data-i18n="evCatFestival">Festival</span>
+              <span class="text-gold text-xs font-semibold"><i class="far fa-calendar mr-1"></i> Dec 20, 2026</span>
+            </div>
+            <h3 class="font-serif text-xl font-bold text-white mb-2" data-i18n="ev2Title">Gita Jayanti & Youth Leadership Camp</h3>
+            <p class="text-sm text-gray-300 leading-relaxed mb-4" data-i18n="ev2Desc">
+              Chanting marathon, Bhagavad Gita life-skills workshops, and youth unity networking.
+            </p>
+            <div class="text-xs text-gold-light mb-4">
+              <i class="fas fa-map-marker-alt mr-1"></i> <span data-i18n="ev2Loc">Vijayawada & Warangal</span>
+            </div>
+          </div>
+          <button onclick="registerEvent('Gita Jayanti & Youth Leadership Camp')" class="w-full bg-gold hover:bg-gold-dark text-maroon-dark font-bold py-2 rounded text-sm transition" data-i18n="btnRegister">
+            Register for Event
+          </button>
+        </div>
+
+        <!-- Event Card 3 -->
+        <div class="bg-maroon/70 border border-gold/30 rounded-xl p-6 flex flex-col justify-between">
+          <div>
+            <div class="flex justify-between items-center mb-4">
+              <span class="bg-saffron-deep text-white text-xs font-bold px-3 py-1 rounded-full uppercase" data-i18n="evCatSeva">Seva</span>
+              <span class="text-gold text-xs font-semibold"><i class="far fa-calendar mr-1"></i> Jan 14, 2027</span>
+            </div>
+            <h3 class="font-serif text-xl font-bold text-white mb-2" data-i18n="ev3Title">Sankranti Maha Annadanam & Temple Cleanup</h3>
+            <p class="text-sm text-gray-300 leading-relaxed mb-4" data-i18n="ev3Desc">
+              Mass food distribution and deep restoration of 50 neglected rural shrines across Telangana & AP.
+            </p>
+            <div class="text-xs text-gold-light mb-4">
+              <i class="fas fa-map-marker-alt mr-1"></i> <span data-i18n="ev3Loc">Multiple Rural Shrines</span>
+            </div>
+          </div>
+          <button onclick="registerEvent('Sankranti Maha Annadanam & Temple Cleanup')" class="w-full bg-gold hover:bg-gold-dark text-maroon-dark font-bold py-2 rounded text-sm transition" data-i18n="btnRegister">
+            Register for Event
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section id="gallery" class="py-20 px-4 bg-templeBg">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <div class="text-saffron font-bold text-sm uppercase tracking-widest mb-2" data-i18n="gallerySubtitle">Moments of Seva</div>
+        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-maroon" data-i18n="galleryTitle">Our Work & Holy Gatherings</h2>
+        <div class="w-24 h-1 bg-gold mx-auto mt-4 mb-4 rounded-full"></div>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="group relative rounded-xl overflow-hidden shadow-lg border border-gold/20 aspect-video">
+          <img src="https://images.unsplash.com/photo-1609766857041-ed402ea8069a?auto=format&fit=crop&w=800&q=80" alt="Temple Architecture" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-4">
+            <span class="text-white text-sm font-semibold" data-i18n="galImg1">Ancient Temple Protection Seva</span>
+          </div>
+        </div>
+
+        <div class="group relative rounded-xl overflow-hidden shadow-lg border border-gold/20 aspect-video">
+          <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=800&q=80" alt="Youth Gathering" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-4">
+            <span class="text-white text-sm font-semibold" data-i18n="galImg2">Youth Dharma & Rights Conclave</span>
+          </div>
+        </div>
+
+        <div class="group relative rounded-xl overflow-hidden shadow-lg border border-gold/20 aspect-video">
+          <img src="https://images.unsplash.com/photo-1514897575457-c4db467cf78e?auto=format&fit=crop&w=800&q=80" alt="Diya & Rituals" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-4">
+            <span class="text-white text-sm font-semibold" data-i18n="galImg3">Deepotsavam & Mass Aarti</span>
+          </div>
+        </div>
+
+        <div class="group relative rounded-xl overflow-hidden shadow-lg border border-gold/20 aspect-video">
+          <img src="https://images.unsplash.com/photo-1621847468516-1ed5d0df56fe?auto=format&fit=crop&w=800&q=80" alt="Community Food Distribution" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-4">
+            <span class="text-white text-sm font-semibold" data-i18n="galImg4">Annadanam Seva in Rural Hamlets</span>
+          </div>
+        </div>
+
+        <div class="group relative rounded-xl overflow-hidden shadow-lg border border-gold/20 aspect-video">
+          <img src="https://images.unsplash.com/photo-1582510003544-4d00b7f74220?auto=format&fit=crop&w=800&q=80" alt="Traditional Heritage" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-4">
+            <span class="text-white text-sm font-semibold" data-i18n="galImg5">Gau Raksha & Village Sanctuaries</span>
+          </div>
+        </div>
+
+        <div class="group relative rounded-xl overflow-hidden shadow-lg border border-gold/20 aspect-video">
+          <img src="https://images.unsplash.com/photo-1605379399642-870262d3d051?auto=format&fit=crop&w=800&q=80" alt="Legal Advocacy Meeting" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-4">
+            <span class="text-white text-sm font-semibold" data-i18n="galImg6">Legal Rights Council Meeting</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DONATIONS & PLEDGE SECTION -->
+  <section id="donate" class="py-20 px-4 saffron-gradient text-white relative">
+    <div class="max-w-4xl mx-auto bg-maroon-dark/90 border-2 border-gold rounded-2xl p-6 sm:p-10 shadow-2xl backdrop-blur">
+      <div class="text-center mb-10">
+        <div class="inline-block p-3 rounded-full bg-gold/10 text-gold mb-3 text-2xl">
+          <i class="fas fa-hand-holding-heart"></i>
+        </div>
+        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-gold-light" data-i18n="donateTitle">Donate & Support Dharma</h2>
+        <div class="w-20 h-1 bg-gold mx-auto my-3 rounded-full"></div>
+        <p class="text-gray-300 text-sm sm:text-base" data-i18n="donateSubtitle">
+          Your voluntary contributions strengthen our legal aid wing, support rural priests, feed the needy, and safeguard temples.
+        </p>
+      </div>
+
+      <!-- Donation / Pledge Form -->
+      <form id="pledgeForm" onsubmit="handlePledge(event)" class="space-y-6">
+        <div>
+          <label class="block text-xs uppercase tracking-wider text-gold font-semibold mb-2" data-i18n="pledgeSelectAmount">Select Vedic Pledge Amount (₹)</label>
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+            <button type="button" onclick="setAmount(501)" class="amount-btn border border-gold/40 hover:border-gold py-2.5 rounded font-bold text-sm transition">₹501</button>
+            <button type="button" onclick="setAmount(1116)" class="amount-btn border border-gold/40 hover:border-gold py-2.5 rounded font-bold text-sm transition bg-gold text-maroon-dark font-black">₹1,116</button>
+            <button type="button" onclick="setAmount(2500)" class="amount-btn border border-gold/40 hover:border-gold py-2.5 rounded font-bold text-sm transition">₹2,500</button>
+            <button type="button" onclick="setAmount(5001)" class="amount-btn border border-gold/40 hover:border-gold py-2.5 rounded font-bold text-sm transition">₹5,001</button>
+          </div>
+          <div class="mt-3">
+            <input type="number" id="customAmount" placeholder="Or Enter Custom Amount (₹)" class="w-full bg-black/40 border border-gold/30 rounded p-3 text-white focus:outline-none focus:border-gold text-sm">
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-xs uppercase tracking-wider text-gold font-semibold mb-2" data-i18n="pledgeName">Full Name *</label>
+            <input type="text" id="pledgeName" required placeholder="e.g. Ramesh Sharma" class="w-full bg-black/40 border border-gold/30 rounded p-3 text-white focus:outline-none focus:border-gold text-sm">
+          </div>
+          <div>
+            <label class="block text-xs uppercase tracking-wider text-gold font-semibold mb-2" data-i18n="pledgePhone">Mobile Number (WhatsApp) *</label>
+            <input type="tel" id="pledgePhone" required placeholder="+91 98765 43210" class="w-full bg-black/40 border border-gold/30 rounded p-3 text-white focus:outline-none focus:border-gold text-sm">
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-xs uppercase tracking-wider text-gold font-semibold mb-2" data-i18n="pledgeCause">Designated Seva Wing *</label>
+          <select id="pledgeCause" class="w-full bg-black/40 border border-gold/30 rounded p-3 text-white focus:outline-none focus:border-gold text-sm">
+            <option value="Legal Defense & Hindu Rights" data-i18n="causeLegal">Hindu Rights Defense & Legal Advocacy Fund</option>
+            <option value="Temple Rejuvenation" data-i18n="causeTemple">Rural Ancient Temple Renovation & Seva</option>
+            <option value="Maha Annadanam" data-i18n="causeAnnadanam">Maha Annadanam & Hunger Relief</option>
+            <option value="General SSH Operations" data-i18n="causeGeneral">General Dharma Protection Activities</option>
+          </select>
+        </div>
+
+        <button type="submit" class="w-full bg-saffron hover:bg-saffron-deep text-white font-bold py-3.5 rounded-lg text-base shadow-xl transition flex items-center justify-center gap-2">
+          <i class="fas fa-check-circle"></i> <span data-i18n="btnSubmitPledge">Confirm Pledge & Generate Receipt</span>
+        </button>
+      </form>
+
+      <!-- Pledge Success Dialog Box -->
+      <div id="pledgeSuccess" class="hidden mt-6 bg-black/60 border border-gold p-6 rounded-xl text-center">
+        <i class="fas fa-om text-gold text-4xl mb-2"></i>
+        <h3 class="font-serif text-xl font-bold text-gold" data-i18n="receiptTitle">Pledge Registered Successfully!</h3>
+        <p class="text-sm text-gray-200 mt-2" id="pledgeSummaryText"></p>
+        <div class="mt-4 p-3 bg-white/10 rounded inline-block text-xs text-gold-light">
+          <strong>UPI ID:</strong> <span class="select-all">ssh.dharma@upi</span> | <strong>Helpline:</strong> +91 98765 43210
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT & VOLUNTEER SECTION -->
+  <section id="contact" class="py-20 px-4 bg-templeBg">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <!-- Contact Information & Map -->
+        <div>
+          <div class="text-saffron font-bold text-sm uppercase tracking-widest mb-1" data-i18n="contactSubtitle">Reach Out</div>
+          <h2 class="font-serif text-3xl sm:text-4xl font-bold text-maroon mb-6" data-i18n="contactTitle">Contact & Emergency Dharma Helpline</h2>
+          <p class="text-gray-700 leading-relaxed mb-8" data-i18n="contactLead">
+            If you or your local community are experiencing rights suppression, harassment, temple desecration, or need assistance organizing an event, connect with us immediately.
+          </p>
+
+          <div class="space-y-4">
+            <div class="flex items-start space-x-4">
+              <div class="w-10 h-10 rounded-full bg-saffron/10 text-saffron flex items-center justify-center text-lg shrink-0 mt-1">
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+              <div>
+                <h4 class="font-bold text-maroon text-sm" data-i18n="cntHeadOffice">Central Headquarters</h4>
+                <p class="text-sm text-gray-600">SSH Central Mandir Complex, Telangana & Andhra Pradesh, India</p>
+              </div>
+            </div>
+
+            <div class="flex items-start space-x-4">
+              <div class="w-10 h-10 rounded-full bg-maroon/10 text-maroon flex items-center justify-center text-lg shrink-0 mt-1">
+                <i class="fas fa-phone-alt"></i>
+              </div>
+              <div>
+                <h4 class="font-bold text-maroon text-sm" data-i18n="cntPhone">Rights & Seva Helpline (24x7)</h4>
+                <p class="text-sm text-gray-600">+91 98765 43210 / +91 91234 56789</p>
+              </div>
+            </div>
+
+            <div class="flex items-start space-x-4">
+              <div class="w-10 h-10 rounded-full bg-gold/10 text-gold-dark flex items-center justify-center text-lg shrink-0 mt-1">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <div>
+                <h4 class="font-bold text-maroon text-sm" data-i18n="cntEmail">Official Email</h4>
+                <p class="text-sm text-gray-600">contact@savenservethehindu.org</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Social Channels -->
+          <div class="mt-8">
+            <h5 class="text-xs uppercase font-bold text-gray-500 tracking-wider mb-3" data-i18n="cntSocial">Follow & Join Our Channels</h5>
+            <div class="flex space-x-3 text-lg">
+              <a href="#" class="w-10 h-10 rounded-full bg-maroon text-white flex items-center justify-center hover:bg-saffron transition"><i class="fab fa-whatsapp"></i></a>
+              <a href="#" class="w-10 h-10 rounded-full bg-maroon text-white flex items-center justify-center hover:bg-saffron transition"><i class="fab fa-telegram-plane"></i></a>
+              <a href="#" class="w-10 h-10 rounded-full bg-maroon text-white flex items-center justify-center hover:bg-saffron transition"><i class="fab fa-youtube"></i></a>
+              <a href="#" class="w-10 h-10 rounded-full bg-maroon text-white flex items-center justify-center hover:bg-saffron transition"><i class="fab fa-x-twitter"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="bg-white p-8 rounded-2xl shadow-lg border border-gold/30">
+          <h3 class="font-serif text-2xl font-bold text-maroon mb-2" data-i18n="cntFormTitle">Send an Urgent Message / Join as Volunteer</h3>
+          <p class="text-xs text-gray-500 mb-6" data-i18n="cntFormSubtitle">Fill this form to report an incident or enlist in local seva chapters.</p>
+
+          <form id="contactForm" onsubmit="handleContact(event)" class="space-y-4">
+            <div>
+              <label class="block text-xs font-semibold text-gray-700 uppercase mb-1" data-i18n="lblYourName">Your Name *</label>
+              <input type="text" id="contactName" required class="w-full border border-gray-300 rounded p-2.5 text-sm focus:border-maroon focus:outline-none">
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs font-semibold text-gray-700 uppercase mb-1" data-i18n="lblPhone">Phone Number *</label>
+                <input type="tel" id="contactPhone" required class="w-full border border-gray-300 rounded p-2.5 text-sm focus:border-maroon focus:outline-none">
+              </div>
+              <div>
+                <label class="block text-xs font-semibold text-gray-700 uppercase mb-1" data-i18n="lblCity">City / Mandal *</label>
+                <input type="text" id="contactCity" required class="w-full border border-gray-300 rounded p-2.5 text-sm focus:border-maroon focus:outline-none">
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-xs font-semibold text-gray-700 uppercase mb-1" data-i18n="lblTopic">Subject / Purpose *</label>
+              <select id="contactTopic" class="w-full border border-gray-300 rounded p-2.5 text-sm focus:border-maroon focus:outline-none">
+                <option value="Volunteer Enrollment" data-i18n="optVolunteer">Join as Active Volunteer</option>
+                <option value="Legal Rights Violation" data-i18n="optLegal">Report Hindu Rights Violation / Legal Help</option>
+                <option value="Temple Protection" data-i18n="optTemple">Request Temple Restoration / Assistance</option>
+                <option value="General Query" data-i18n="optGeneral">General Inquiry</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="block text-xs font-semibold text-gray-700 uppercase mb-1" data-i18n="lblMessage">Message Details *</label>
+              <textarea id="contactMessage" rows="4" required class="w-full border border-gray-300 rounded p-2.5 text-sm focus:border-maroon focus:outline-none" placeholder="Explain the situation or your interest in volunteering..."></textarea>
+            </div>
+
+            <button type="submit" class="w-full bg-maroon hover:bg-maroon-dark text-white font-bold py-3 rounded text-sm transition">
+              <span data-i18n="btnSendMsg">Submit Message</span>
+            </button>
+          </form>
+
+          <div id="contactSuccessMsg" class="hidden mt-4 p-3 bg-green-100 border border-green-400 text-green-800 text-xs rounded text-center">
+            <i class="fas fa-check-circle mr-1"></i> <span data-i18n="msgSentSuccess">Your message has been received! Our coordinator will contact you shortly.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER SIGNUP -->
+  <section class="py-12 px-4 bg-maroon text-white border-t border-gold/30">
+    <div class="max-w-4xl mx-auto text-center">
+      <i class="fas fa-bell text-gold text-3xl mb-3"></i>
+      <h3 class="font-serif text-2xl font-bold text-gold-light" data-i18n="newsTitle">Receive Weekly Dharma Bulletins on WhatsApp / Email</h3>
+      <p class="text-sm text-gray-300 mt-1 mb-6" data-i18n="newsDesc">Never miss an urgent campaign, festival date, or organizational announcement.</p>
+      <form onsubmit="handleNewsletter(event)" class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+        <input type="text" id="newsletterContact" required placeholder="Enter WhatsApp No or Email" class="flex-grow p-3 rounded-lg text-sm text-gray-900 focus:outline-none">
+        <button type="submit" class="bg-saffron hover:bg-saffron-deep text-white font-bold px-6 py-3 rounded-lg text-sm whitespace-nowrap" data-i18n="btnSubscribe">
+          Subscribe
+        </button>
+      </form>
+      <div id="newsletterSuccess" class="hidden text-xs text-gold-light mt-3">
+        ✓ Thank you for subscribing to SSH alerts!
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-maroon-dark text-gray-400 py-12 px-4 border-t-2 border-gold text-sm">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+      <div class="space-y-3">
+        <div class="flex items-center space-x-2 text-gold-light font-serif text-xl font-bold">
+          <span>ॐ SSH</span>
+        </div>
+        <p class="text-xs text-gray-400 leading-relaxed" data-i18n="footerDesc">
+          Save and Serve the Hindu is committed to safeguarding Hindu interests, preserving cultural pride, and uniting every devotee under the eternal law of Dharma.
+        </p>
+      </div>
+
+      <div>
+        <h4 class="text-white font-serif font-bold mb-3" data-i18n="footQuickLinks">Quick Links</h4>
+        <ul class="space-y-1.5 text-xs">
+          <li><a href="#about" class="hover:text-gold">About the Movement</a></li>
+          <li><a href="#bulletin" class="hover:text-gold">Information & News</a></li>
+          <li><a href="#events" class="hover:text-gold">Events & Yattras</a></li>
+          <li><a href="#donate" class="hover:text-gold">Seva Donation</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="text-white font-serif font-bold mb-3" data-i18n="footCoreFocus">Core Focus</h4>
+        <ul class="space-y-1.5 text-xs">
+          <li>• Legal Aid for Temples</li>
+          <li>• Gau Seva & Protection</li>
+          <li>• Youth Vedic Camps</li>
+          <li>• Rural Annadanam Drives</li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="text-white font-serif font-bold mb-3" data-i18n="footLanguage">Language / భాష</h4>
+        <p class="text-xs text-gray-400 mb-3" data-i18n="footLangDesc">Switch site content between English and Telugu:</p>
+        <button onclick="toggleLanguage()" class="bg-gold hover:bg-gold-dark text-maroon-dark font-bold px-3 py-1.5 rounded text-xs transition">
+          Switch to <span id="foot-lang-indicator">తెలుగు (Telugu)</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="max-w-7xl mx-auto pt-6 border-t border-gold/20 flex flex-col sm:flex-row justify-between items-center text-xs text-gray-500 gap-2">
+      <div>© 2026 Save and Serve the Hindu (SSH). All Rights Reserved.</div>
+      <div class="text-gold-light font-serif">॥ ధర్మో రక్షతి రక్షితః ॥ Dharmo Rakshati Rakshitah ॥</div>
+    </div>
+  </footer>
+
+  <!-- MODAL: EASY INFORMATION UPLOAD -->
+  <div id="uploadModal" class="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+    <div class="bg-white rounded-2xl max-w-lg w-full p-6 sm:p-8 relative shadow-2xl border-2 border-gold max-h-[90vh] overflow-y-auto">
+      <button onclick="closeUploadModal()" class="absolute top-4 right-4 text-gray-500 hover:text-black text-xl">
+        <i class="fas fa-times"></i>
+      </button>
+
+      <div class="flex items-center gap-3 mb-4">
+        <div class="w-10 h-10 rounded-full bg-saffron text-white flex items-center justify-center text-lg">
+          <i class="fas fa-feather-alt"></i>
+        </div>
+        <div>
+          <h3 class="font-serif font-bold text-xl text-maroon" data-i18n="modalUploadTitle">Upload Information & News</h3>
+          <p class="text-xs text-gray-500" data-i18n="modalUploadSubtitle">Post news, legal bulletins, or temple updates for visitors.</p>
+        </div>
+      </div>
+
+      <form onsubmit="handleNewPost(event)" class="space-y-4">
+        <div>
+          <label class="block text-xs font-bold text-gray-700 uppercase mb-1" data-i18n="modalLblTitle">Article / Notice Title *</label>
+          <input type="text" id="postTitle" required class="w-full border border-gray-300 rounded p-2 text-sm focus:border-maroon focus:outline-none" placeholder="e.g. Legal update on village temple lands">
+        </div>
+
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block text-xs font-bold text-gray-700 uppercase mb-1" data-i18n="modalLblCat">Category *</label>
+            <select id="postCategory" class="w-full border border-gray-300 rounded p-2 text-sm focus:border-maroon focus:outline-none">
+              <option value="rights">Rights & Legal</option>
+              <option value="seva">Temple Seva</option>
+              <option value="awareness">Cultural Awareness</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-xs font-bold text-gray-700 uppercase mb-1" data-i18n="modalLblAuthor">Author / Coordinator *</label>
+            <input type="text" id="postAuthor" required class="w-full border border-gray-300 rounded p-2 text-sm focus:border-maroon focus:outline-none" placeholder="e.g. SSH Legal Wing">
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold text-gray-700 uppercase mb-1" data-i18n="modalLblContent">Content / Information Details *</label>
+          <textarea id="postContent" rows="4" required class="w-full border border-gray-300 rounded p-2 text-sm focus:border-maroon focus:outline-none" placeholder="Provide full information, contact details, dates, or legal guidance..."></textarea>
+        </div>
+
+        <button type="submit" class="w-full bg-saffron hover:bg-saffron-deep text-white font-bold py-2.5 rounded-lg text-sm shadow transition" data-i18n="btnPublish">
+          Publish to Bulletin Board
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- SCRIPT ENGINE: BILINGUAL TRANSLATIONS & STATE -->
+  <script>
+    let currentLanguage = 'en'; // default English
+
+    const translations = {
+      en: {
+        tagline: "Dharmo Rakshati Rakshitah",
+        headline: "Defending Rights • Building Unity • Serving Dharma",
+        brandSub: "Save and Serve the Hindu",
+        navHome: "Home",
+        navAbout: "About Us",
+        navBulletin: "Information Hub",
+        navTeachings: "Beliefs",
+        navEvents: "Events",
+        navGallery: "Gallery",
+        navContact: "Contact",
+        navDonate: "Donate / Seva",
+        navPledge: "Pledge",
+        heroBadge: "United for Dignity, Heritage & Rights",
+        heroTitle1: "Save and Serve the Hindu",
+        heroTitle2: "Protecting Rights. Uniting People.",
+        heroDesc: "Empowering our community, defending sacred Hindu rights, inspiring youth, and standing together through selfless seva. Stay informed, stay united, and uphold Sanatana Dharma.",
+        heroBtnInfo: "Explore Information Hub",
+        heroBtnPledge: "Pledge Support",
+        heroBtnUpload: "Post Update",
+        statMembers: "Active Members",
+        statTemples: "Temples Supported",
+        statHelpline: "Legal & Rights Helpline",
+        statSeva: "Seva Camps Held",
+        aboutSubtitle: "Who We Are",
+        aboutTitle: "Guardians of Dharma & Community Unity",
+        aboutLead: "Save and Serve the Hindu (SSH) is a grassroots organization founded to bring every Hindu together under the sacred banner of unity, justice, and heritage preservation.",
+        pillar1Title: "Protect Hindu Rights",
+        pillar1Desc: "Defending cultural rights, fighting against temple mismanagement, and providing fast legal support to affected families.",
+        pillar2Title: "Forge Collective Unity",
+        pillar2Desc: "Bridging caste, regional, and social divisions to unite all Hindus into one resilient, supportive brotherhood.",
+        pillar3Title: "Information & Awareness",
+        pillar3Desc: "Transparent dissemination of facts, history, government policies, and awareness campaigns so every devotee stays informed.",
+        pillar4Title: "Seva & Heritage Preservation",
+        pillar4Desc: "Revitalizing ancient temples, providing flood/disaster relief, running Gaushalas, and conducting cultural gurukuls.",
+        infoSubtitle: "Public Bulletin Board",
+        infoTitle: "Latest Information & Announcements",
+        infoDesc: "Live updates, advocacy bulletins, and guidelines for the Hindu community.",
+        btnUploadPost: "Upload Information",
+        teachingsSubtitle: "Timeless Wisdom",
+        teachingsTitle: "Core Principles & Dharma",
+        teachingsLead: "Anchored in the Vedas, Upanishads, and the Bhagavad Gita, SSH upholds moral courage, selfless action, and spiritual clarity.",
+        belief1Title: "Dharmo Rakshati Rakshitah",
+        belief1Desc: "'Dharma protects those who protect it.' When we uphold truth, righteousness, and respect for our ancient ways, spiritual strength shields our community.",
+        belief2Title: "Sanghe Shakti Kaliyuge",
+        belief2Desc: "'In the age of Kaliyuga, supreme power resides in collective unity.' Segregation weakens our voice; our strength lies in collective brotherhood.",
+        belief3Title: "Nara Seva, Narayana Seva",
+        belief3Desc: "'Serving humanity is serving the Supreme Lord.' Active charity, feeding the hungry (Annadanam), and safeguarding defenseless beings are our highest spiritual practices.",
+        eventsSubtitle: "Get Involved",
+        eventsTitle: "Upcoming Events & Maha Utsavams",
+        eventsLead: "Join our cultural festivals, awareness conferences, youth workshops, and grassroots rallies.",
+        evCatAdvocacy: "Advocacy",
+        ev1Title: "Statewide Hindu Rights & Legal Aid Meet",
+        ev1Desc: "Free legal guidance for temple protection, heritage litigation, and rights violation redressal.",
+        ev1Loc: "Hyderabad / Online Stream",
+        evCatFestival: "Festival",
+        ev2Title: "Gita Jayanti & Youth Leadership Camp",
+        ev2Desc: "Chanting marathon, Bhagavad Gita life-skills workshops, and youth unity networking.",
+        ev2Loc: "Vijayawada & Warangal",
+        evCatSeva: "Seva",
+        ev3Title: "Sankranti Maha Annadanam & Temple Cleanup",
+        ev3Desc: "Mass food distribution and deep restoration of 50 neglected rural shrines across Telangana & AP.",
+        ev3Loc: "Multiple Rural Shrines",
+        btnRegister: "Register for Event",
+        gallerySubtitle: "Moments of Seva",
+        galleryTitle: "Our Work & Holy Gatherings",
+        galImg1: "Ancient Temple Protection Seva",
+        galImg2: "Youth Dharma & Rights Conclave",
+        galImg3: "Deepotsavam & Mass Aarti",
+        galImg4: "Annadanam Seva in Rural Hamlets",
+        galImg5: "Gau Raksha & Village Sanctuaries",
+        galImg6: "Legal Rights Council Meeting",
+        donateTitle: "Donate & Support Dharma",
+        donateSubtitle: "Your voluntary contributions strengthen our legal aid wing, support rural priests, feed the needy, and safeguard temples.",
+        pledgeSelectAmount: "Select Vedic Pledge Amount (₹)",
+        pledgeName: "Full Name *",
+        pledgePhone: "Mobile Number (WhatsApp) *",
+        pledgeCause: "Designated Seva Wing *",
+        causeLegal: "Hindu Rights Defense & Legal Advocacy Fund",
+        causeTemple: "Rural Ancient Temple Renovation & Seva",
+        causeAnnadanam: "Maha Annadanam & Hunger Relief",
+        causeGeneral: "General Dharma Protection Activities",
+        btnSubmitPledge: "Confirm Pledge & Generate Receipt",
+        receiptTitle: "Pledge Registered Successfully!",
+        contactSubtitle: "Reach Out",
+        contactTitle: "Contact & Emergency Dharma Helpline",
+        contactLead: "If you or your local community are experiencing rights suppression, harassment, temple desecration, or need assistance organizing an event, connect with us immediately.",
+        cntHeadOffice: "Central Headquarters",
+        cntPhone: "Rights & Seva Helpline (24x7)",
+        cntEmail: "Official Email",
+        cntSocial: "Follow & Join Our Channels",
+        cntFormTitle: "Send an Urgent Message / Join as Volunteer",
+        cntFormSubtitle: "Fill this form to report an incident or enlist in local seva chapters.",
+        lblYourName: "Your Name *",
+        lblPhone: "Phone Number *",
+        lblCity: "City / Mandal *",
+        lblTopic: "Subject / Purpose *",
+        optVolunteer: "Join as Active Volunteer",
+        optLegal: "Report Hindu Rights Violation / Legal Help",
+        optTemple: "Request Temple Restoration / Assistance",
+        optGeneral: "General Inquiry",
+        lblMessage: "Message Details *",
+        btnSendMsg: "Submit Message",
+        msgSentSuccess: "Your message has been received! Our coordinator will contact you shortly.",
+        newsTitle: "Receive Weekly Dharma Bulletins on WhatsApp / Email",
+        newsDesc: "Never miss an urgent campaign, festival date, or organizational announcement.",
+        btnSubscribe: "Subscribe",
+        footerDesc: "Save and Serve the Hindu is committed to safeguarding Hindu interests, preserving cultural pride, and uniting every devotee under the eternal law of Dharma.",
+        footQuickLinks: "Quick Links",
+        footCoreFocus: "Core Focus",
+        footLanguage: "Language / భాష",
+        footLangDesc: "Switch site content between English and Telugu:",
+        modalUploadTitle: "Upload Information & News",
+        modalUploadSubtitle: "Post news, legal bulletins, or temple updates for visitors.",
+        modalLblTitle: "Article / Notice Title *",
+        modalLblCat: "Category *",
+        modalLblAuthor: "Author / Coordinator *",
+        modalLblContent: "Content / Information Details *",
+        btnPublish: "Publish to Bulletin Board"
+      },
+      te: {
+        tagline: "ధర్మో రక్షతి రక్షితః",
+        headline: "హక్కుల రక్షణ • హిందూ ఐక్యత • ధర్మ పరిరక్షణ",
+        brandSub: "సేవ్ అండ్ సెర్వ్ ది హిందూ",
+        navHome: "ప్రారంభం",
+        navAbout: "మా గురించి",
+        navBulletin: "సమాచార వేదిక",
+        navTeachings: "సిద్ధాంతాలు",
+        navEvents: "కార్యక్రమాలు",
+        navGallery: "చిత్రమాలిక",
+        navContact: "సంప్రదించండి",
+        navDonate: "విరాళం / సేవ",
+        navPledge: "ప్రతిజ్ఞ",
+        heroBadge: "ఆత్మగౌరవం, వారసత్వం మరియు హక్కుల పరిరక్షణ",
+        heroTitle1: "సేవ్ అండ్ సెర్వ్ ది హిందూ",
+        heroTitle2: "హిందువుల రక్షణ - సంఘటిత శక్తి",
+        heroDesc: "మన సమాజానికి చేదోడుగా నిలవడం, హిందూ ధర్మ హక్కుల పరిరక్షణ, యువతలో జాగృతి మరియు నిస్వార్థ సేవ. సమాచారాన్ని తెలుసుకోండి, ఐక్యంగా నిలవండి, ధర్మాన్ని నిలబెట్టండి.",
+        heroBtnInfo: "సమాచార వేదికను చూడండి",
+        heroBtnPledge: "విరాళం ఇవ్వండి",
+        heroBtnUpload: "సమాచారం అప్‌లోడ్ చేయండి",
+        statMembers: "క్రియాశీల సభ్యులు",
+        statTemples: "రక్షించబడిన దేవాలయాలు",
+        statHelpline: "24/7 న్యాయ సహాయం",
+        statSeva: "నిర్వహించిన సేవా శిబిరాలు",
+        aboutSubtitle: "సంస్థ పరిచయం",
+        aboutTitle: "ధర్మ రక్షకులు & హిందూ ఐక్యతా వేదిక",
+        aboutLead: "సేవ్ అండ్ సెర్వ్ ది హిందూ (SSH) ప్రతి హిందువును ఒక్కతాటిపైకి తెచ్చి, ధర్మ హక్కులను కాపాడుతూ, దేవాలయాలను పరిరక్షించే లక్ష్యంతో ఏర్పాటయింది.",
+        pillar1Title: "హిందూ హక్కుల రక్షణ",
+        pillar1Desc: "సాంస్కృతిక హక్కుల పరిరక్షణ, అన్యాయాలపై పోరాటం మరియు బాధిత కుటుంబాలకు తక్షణ ఉచిత న్యాయ సహాయం.",
+        pillar2Title: "సమగ్ర హిందూ ఐక్యత",
+        pillar2Desc: "కుల, వర్గ, ప్రాంతీయ బేధాలు మరచి హిందువులందరినీ ఒకే శక్తివంతమైన కుటుంబంగా ఏకం చేయడం.",
+        pillar3Title: "సమాచారం & అవగాహన",
+        pillar3Desc: "ప్రతి ఒక్కరికీ సులభంగా అర్థమయ్యే రీతిలో చరిత్ర, చట్టాలు, ప్రభుత్వ పథకాలు మరియు తాజా వార్తలను చేరవేయడం.",
+        pillar4Title: "సేవ & సాంస్కృతిక రక్షణ",
+        pillar4Desc: "పురాతన ఆలయాల పునరుద్ధరణ, నిరుపేదలకు అన్నదానం, గోసంరక్షణ మరియు గ్రామీణ ప్రాంతాలలో విద్య సహాయం.",
+        infoSubtitle: "ప్రజా సమాచార పలక",
+        infoTitle: "తాజా సమాచారం & ముఖ్యమైన ప్రకటనలు",
+        infoDesc: "హిందూ సమాజం కోసం అవసరమైన ప్రత్యక్ష సమాచారం, చట్టపరమైన సలహాలు మరియు సూచనలు.",
+        btnUploadPost: "సమాచారం అప్‌లోడ్ చేయండి",
+        teachingsSubtitle: "శాశ్వత మార్గదర్శనం",
+        teachingsTitle: "ముఖ్య సిద్ధాంతాలు & ధర్మం",
+        teachingsLead: "వేదాలు, ఉపనిషత్తులు మరియు భగవద్గీత మార్గంలో నిస్వార్థ కార్యాచరణ మరియు నైతిక శక్తిని పెంపొందించడం.",
+        belief1Title: "ధర్మో రక్షతి రక్షితః",
+        belief1Desc: "ధర్మాన్ని మనం రక్షిస్తే, ఆ ధర్మమే మనలను కాపాడుతుంది. సత్యం, ధర్మ మార్గంలో నడిచినప్పుడు దైవబలం మనకు రక్షణగా నిలుస్తుంది.",
+        belief2Title: "సంఘే శక్తి కలౌయుగే",
+        belief2Desc: "కలియుగంలో ఐక్యతలోనే నిజమైన బలం ఉంది. విభజన బలహీనపరుస్తుంది; సంఘటిత హిందూ సమాజమే మన అసలైన రక్షణ కవచం.",
+        belief3Title: "నర సేవయే నారాయణ సేవ",
+        belief3Desc: "తోటి మానవులకు, సమాజానికి చేసే నిస్వార్థ సేవే నిజమైన దైవపూజ. ఆకలి తీర్చడం (అన్నదానం), గోసేవ అత్యున్నత సాధన.",
+        eventsSubtitle: "భాగస్వామ్యం కండి",
+        eventsTitle: "రాబోయే కార్యక్రమాలు & మహోత్సవాలు",
+        eventsLead: "మా సాంస్కృతిక వేడుకలు, అవగాహన సదస్సులు మరియు యువజన సమావేశాలలో పాల్గొనండి.",
+        evCatAdvocacy: "న్యాయ పోరాటం",
+        ev1Title: "రాష్ట్ర స్థాయి హిందూ హక్కులు & న్యాయ సదస్సు",
+        ev1Desc: "ఆలయ పరిరక్షణ, చట్టపరమైన సమస్యలపై ఉచిత న్యాయ సలహాలు మరియు సహాయ శిబిరం.",
+        ev1Loc: "హైదరాబాద్ / ఆన్‌లైన్ ప్రసారం",
+        evCatFestival: "ఉత్సవం",
+        ev2Title: "గీతా జయంతి & యువజన నాయకత్వ శిక్షణ",
+        ev2Desc: "భగవద్గీత శ్లోక పఠనం, జీవన నైపుణ్యాల అవగాహన మరియు యువత ఐక్యతా సమ్మేళనం.",
+        ev2Loc: "విజయవాడ & వరంగల్",
+        evCatSeva: "సేవా కార్యక్రమం",
+        ev3Title: "సంక్రాంతి మహా అన్నదానం & ఆలయాల శుభ్రత",
+        ev3Desc: "రెండు తెలుగు రాష్ట్రాలలోని 50 గ్రామీణ పురాతన ఆలయాల పునరుద్ధరణ మరియు భారీ అన్నదానం.",
+        ev3Loc: "గ్రామీణ ప్రాంత ఆలయాలు",
+        btnRegister: "పేరు నమోదు చేసుకోండి",
+        gallerySubtitle: "సేవా దృశ్యాలు",
+        galleryTitle: "కార్యక్షేత్రంలో మా ప్రస్థానం",
+        galImg1: "పురాతన ఆలయ పరిరక్షణ సేవ",
+        galImg2: "హిందూ యువజన ధర్మ సదస్సు",
+        galImg3: "దీపోత్సవం మరియు మహా హారతి",
+        galImg4: "గ్రామాలలో నిరంతర అన్నదాన సేవ",
+        galImg5: "గోసంరక్షణ & గ్రామీణ గోశాలలు",
+        galImg6: "లీగల్ రైట్స్ కౌన్సిల్ సమావేశం",
+        donateTitle: "విరాళం ఇవ్వండి - ధర్మాన్ని నిలబెట్టండి",
+        donateSubtitle: "మీరు అందించే తోడ్పాటు న్యాయ పోరాటాలకు, గ్రామీణ పూజారులకు, అన్నదానానికి మరియు దేవాలయ రక్షణకు వినియోగించబడుతుంది.",
+        pledgeSelectAmount: "పవిత్ర విరాళ మొత్తం ఎంచుకోండి (₹)",
+        pledgeName: "పూర్తి పేరు *",
+        pledgePhone: "మొబైల్ నంబర్ (వాట్సాప్) *",
+        pledgeCause: "మీరు సహాయం చేయదలచిన విభాగం *",
+        causeLegal: "హిందూ హక్కుల రక్షణ & న్యాయ నిధి",
+        causeTemple: "గ్రామీణ పురాతన ఆలయాల పునరుద్ధరణ",
+        causeAnnadanam: "మహా అన్నదానం & ఆకలి నివారణ",
+        causeGeneral: "సాధారణ ధర్మ పరిరక్షణ కార్యకలాపాలు",
+        btnSubmitPledge: "విరాళ ప్రతిజ్ఞను నమోదు చేయండి",
+        receiptTitle: "మీ ప్రతిజ్ఞ విజయవంతంగా నమోదైంది!",
+        contactSubtitle: "సంప్రదించండి",
+        contactTitle: "అత్యవసర హెల్ప్‌లైన్ & చిరునామా",
+        contactLead: "మీ ప్రాంతంలో ఏదైనా అన్యాయం జరిగినా, ఆలయ సమస్యలు ఉన్నా, లేదా స్వచ్ఛంద కార్యకర్తగా చేరాలనుకున్నా తక్షణమే మమ్మల్ని సంప్రదించండి.",
+        cntHeadOffice: "కేంద్ర కార్యాలయం",
+        cntPhone: "24/7 రక్షణ & సేవా హెల్ప్‌లైన్",
+        cntEmail: "అధికారిక ఈమెయిల్",
+        cntSocial: "మా సోషల్ మీడియా వేదికలు",
+        cntFormTitle: "సందేశం పంపండి / సభ్యునిగా చేరండి",
+        cntFormSubtitle: "సమస్యను తెలియజేయడానికి లేదా వాలంటీర్‌గా చేరడానికి ఈ ఫారమ్ పూరించండి.",
+        lblYourName: "మీ పేరు *",
+        lblPhone: "ఫోన్ నంబర్ *",
+        lblCity: "ఊరు / మండలం *",
+        lblTopic: "విషయం / ఉద్దేశ్యం *",
+        optVolunteer: "వాలంటీర్‌గా చేరడానికి",
+        optLegal: "హక్కుల ఉల్లంఘన ఫిర్యాదు / న్యాయ సహాయం",
+        optTemple: "ఆలయ పునరుద్ధరణ సహాయం",
+        optGeneral: "సాధారణ సమాచారం",
+        lblMessage: "వివరాలు తెలియజేయండి *",
+        btnSendMsg: "సందేశం పంపండి",
+        msgSentSuccess: "మీ సందేశం చేరింది! మా సమన్వయకర్త త్వరలోనే మిమ్మల్ని సంప్రదిస్తారు.",
+        newsTitle: "ప్రతి వారం ధర్మ సమాచారాన్ని వాట్సాప్ / ఈమెయిల్‌లో పొందండి",
+        newsDesc: "ముఖ్యమైన ప్రకటనలు, ఉత్సవాల తేదీలను ఎప్పటికప్పుడు తెలుసుకోండి.",
+        btnSubscribe: "నమోదు చేసుకోండి",
+        footerDesc: "సేవ్ అండ్ సెర్వ్ ది హిందూ సంస్థ హిందూ ప్రయోజనాలను కాపాడటానికి, సాంస్కృతిక ఐక్యతను పెంపొందించడానికి నిరంతరం శ్రమిస్తుంది.",
+        footQuickLinks: "ముఖ్యమైన లింకులు",
+        footCoreFocus: "లక్ష్యాలు",
+        footLanguage: "భాష మార్పు",
+        footLangDesc: "వెబ్‌సైట్ సమాచారాన్ని తెలుగు లేదా ఆంగ్లంలో చూడండి:",
+        modalUploadTitle: "కొత్త సమాచారాన్ని అప్‌లోడ్ చేయండి",
+        modalUploadSubtitle: "ప్రజలకు అవసరమైన ప్రకటనలు, చట్టపరమైన సమాచారం నమోదు చేయండి.",
+        modalLblTitle: "సమాచార శీర్షిక (Title) *",
+        modalLblCat: "విభాగం (Category) *",
+        modalLblAuthor: "రచయిత / సమన్వయకర్త *",
+        modalLblContent: "పూర్తి వివరాలు (Content) *",
+        btnPublish: "ప్రకటనను ప్రచురించండి"
+      }
+    };
+
+    // Default Seed Articles for Bulletin
+    const defaultNews = [
+      {
+        id: 1,
+        title: "Tirupati & Rural Shrines: Legal Aid Wing Guidelines Published",
+        title_te: "తిరుపతి & గ్రామీణ ఆలయాలు: న్యాయ సహాయ మార్గదర్శకాలు విడుదల",
+        category: "rights",
+        date: "Oct 2026",
+        author: "SSH Legal Council",
+        content: "A detailed booklet on how village committees can legally safeguard mandir lands from unauthorized occupation without costly court charges.",
+        content_te: "గ్రామ కమిటీలు అధిక ఖర్చులు లేకుండా ఆలయ భూములను అక్రమాల నుండి చట్టబద్ధంగా ఎలా కాపాడుకోవచ్చో వివరించే సమగ్ర మార్గదర్శకాలు విడుదలయ్యాయి."
+      },
+      {
+        id: 2,
+        title: "50 Rural Temples Restored Across Andhra & Telangana",
+        title_te: "ఆంధ్రప్రదేశ్, తెలంగాణలలో 50 పురాతన ఆలయాల పునరుద్ధరణ పూర్తి",
+        category: "seva",
+        date: "Sept 2026",
+        author: "Seva Taskforce",
+        content: "With community contributions, SSH has rejuvenated 50 crumbling mandirs, appointing archakas and initiating daily deeparadhana.",
+        content_te: "భక్తుల సహకారంతో శిథిలావస్థలో ఉన్న 50 ఆలయాలను పునరుద్ధరించి, నిత్య దీపారాధన మరియు అర్చకుల గౌరవ వేతనాన్ని SSH ప్రారంభించింది."
+      },
+      {
+        id: 3,
+        title: "Youth Dharma Clubs Launched in 100 Degree Colleges",
+        title_te: "100 డిగ్రీ కళాశాలల్లో హిందూ యువజన ధర్మ క్లబ్‌ల ప్రారంభం",
+        category: "awareness",
+        date: "Aug 2026",
+        author: "Youth Wing",
+        content: "Empowering university students with knowledge of Indian history, self-defense skills, and spiritual leadership modules.",
+        content_te: "భారతీయ చరిత్ర, ఆత్మరక్షణ నైపుణ్యాలు మరియు నాయకత్వ లక్షణాలపై యువతీ యువకులకు అవగాహన కల్పించే కార్యక్రమాలు ప్రారంభమయ్యాయి."
+      }
+    ];
+
+    let currentNewsList = JSON.parse(localStorage.getItem('ssh_bulletin_articles')) || defaultNews;
+    let selectedPledgeAmount = 1116;
+
+    // Toggle Language Function
+    function toggleLanguage() {
+      currentLanguage = (currentLanguage === 'en') ? 'te' : 'en';
+      applyTranslations();
+      renderNews('all');
+    }
+
+    function applyTranslations() {
+      const lang = translations[currentLanguage];
+      
+      // Update data-i18n items
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (lang[key]) {
+          el.textContent = lang[key];
+        }
+      });
+
+      // Update button labels
+      const toggleBtn = document.getElementById('lang-btn-text');
+      const footIndicator = document.getElementById('foot-lang-indicator');
+      if (currentLanguage === 'en') {
+        toggleBtn.textContent = 'తెలుగు (Telugu)';
+        footIndicator.textContent = 'తెలుగు (Telugu)';
+        document.documentElement.lang = 'en';
+      } else {
+        toggleBtn.textContent = 'English';
+        footIndicator.textContent = 'English';
+        document.documentElement.lang = 'te';
+      }
+    }
+
+    // Render Bulletin News
+    function renderNews(filter = 'all') {
+      const grid = document.getElementById('news-grid');
+      grid.innerHTML = '';
+
+      const filtered = (filter === 'all') 
+        ? currentNewsList 
+        : currentNewsList.filter(item => item.category === filter);
+
+      if (filtered.length === 0) {
+        grid.innerHTML = `<div class="col-span-3 text-center text-gray-500 py-10">${currentLanguage === 'en' ? 'No notices found under this filter.' : 'ఈ విభాగంలో ప్రకటనలు లేవు.'}</div>`;
+        return;
+      }
+
+      filtered.forEach(item => {
+        const title = (currentLanguage === 'te' && item.title_te) ? item.title_te : item.title;
+        const text = (currentLanguage === 'te' && item.content_te) ? item.content_te : item.content;
+        
+        let catBadge = item.category.toUpperCase();
+        if (currentLanguage === 'te') {
+          if (item.category === 'rights') catBadge = 'న్యాయ పరిరక్షణ';
+          else if (item.category === 'seva') catBadge = 'ఆలయ సేవ';
+          else catBadge = 'అవగాహన';
+        }
+
+        const card = document.createElement('div');
+        card.className = "bg-white border-2 border-gold/30 rounded-xl p-6 shadow hover:shadow-xl transition flex flex-col justify-between";
+        card.innerHTML = `
+          <div>
+            <div class="flex justify-between items-center mb-3">
+              <span class="bg-maroon/10 text-maroon font-bold text-xs px-2.5 py-1 rounded">${catBadge}</span>
+              <span class="text-xs text-gray-400"><i class="far fa-clock mr-1"></i>${item.date}</span>
+            </div>
+            <h3 class="font-serif font-bold text-lg text-maroon mb-2 leading-snug">${title}</h3>
+            <p class="text-xs text-gray-600 leading-relaxed mb-4">${text}</p>
+          </div>
+          <div class="pt-4 border-t border-gray-100 flex justify-between items-center text-xs">
+            <span class="text-gray-500 font-medium"><i class="fas fa-user-shield text-saffron mr-1"></i> ${item.author}</span>
+            <button onclick="shareArticle('${title}')" class="text-maroon font-bold hover:text-saffron">
+              <i class="fas fa-share-alt mr-1"></i> Share
+            </button>
+          </div>
+        `;
+        grid.appendChild(card);
+      });
+    }
+
+    // Filter news tabs
+    function filterNews(type) {
+      document.querySelectorAll('.filter-tab').forEach(b => {
+        b.classList.remove('bg-maroon', 'text-white');
+        b.classList.add('text-gray-700');
+      });
+      const activeBtn = document.getElementById(`filter-${type}`);
+      if (activeBtn) {
+        activeBtn.classList.add('bg-maroon', 'text-white');
+        activeBtn.classList.remove('text-gray-700');
+      }
+      renderNews(type);
+    }
+
+    // Donation amount selector
+    function setAmount(amt) {
+      selectedPledgeAmount = amt;
+      document.getElementById('customAmount').value = '';
+      document.querySelectorAll('.amount-btn').forEach(btn => {
+        btn.classList.remove('bg-gold', 'text-maroon-dark', 'font-black');
+      });
+      event.target.classList.add('bg-gold', 'text-maroon-dark', 'font-black');
+    }
+
+    function handlePledge(e) {
+      e.preventDefault();
+      const custom = document.getElementById('customAmount').value;
+      const finalAmt = custom ? custom : selectedPledgeAmount;
+      const name = document.getElementById('pledgeName').value;
+      const phone = document.getElementById('pledgePhone').value;
+      const cause = document.getElementById('pledgeCause').value;
+
+      const summary = (currentLanguage === 'en')
+        ? `Namaste ${name}! Your pledge of ₹${finalAmt} for "${cause}" has been recorded. An official receipt & UPI prompt have been sent to ${phone}.`
+        : `నమస్కారం ${name}! "${cause}" కోసం ₹${finalAmt} విరాళ ప్రతిజ్ఞ నమోదైంది. అధికారిక రశీదు మరియు UPI వివరాలు ${phone} నంబర్‌కు పంపబడ్డాయి.`;
+
+      document.getElementById('pledgeSummaryText').textContent = summary;
+      document.getElementById('pledgeSuccess').classList.remove('hidden');
+      document.getElementById('pledgeForm').reset();
+    }
+
+    // Contact form handling
+    function handleContact(e) {
+      e.preventDefault();
+      document.getElementById('contactSuccessMsg').classList.remove('hidden');
+      document.getElementById('contactForm').reset();
+      setTimeout(() => {
+        document.getElementById('contactSuccessMsg').classList.add('hidden');
+      }, 5000);
+    }
+
+    // Newsletter subscription
+    function handleNewsletter(e) {
+      e.preventDefault();
+      document.getElementById('newsletterSuccess').classList.remove('hidden');
+      document.getElementById('newsletterContact').value = '';
+      setTimeout(() => {
+        document.getElementById('newsletterSuccess').classList.add('hidden');
+      }, 4000);
+    }
+
+    // Easy Information Upload Modal handlers
+    function openUploadModal() {
+      document.getElementById('uploadModal').classList.remove('hidden');
+    }
+
+    function closeUploadModal() {
+      document.getElementById('uploadModal').classList.add('hidden');
+    }
+
+    function handleNewPost(e) {
+      e.preventDefault();
+      const title = document.getElementById('postTitle').value;
+      const category = document.getElementById('postCategory').value;
+      const author = document.getElementById('postAuthor').value;
+      const content = document.getElementById('postContent').value;
+
+      const newPost = {
+        id: Date.now(),
+        title: title,
+        title_te: title,
+        category: category,
+        date: "Just Now",
+        author: author,
+        content: content,
+        content_te: content
+      };
+
+      currentNewsList.unshift(newPost);
+      localStorage.setItem('ssh_bulletin_articles', JSON.stringify(currentNewsList));
+      renderNews('all');
+      closeUploadModal();
+      e.target.reset();
+      alert(currentLanguage === 'en' ? "Information post published successfully!" : "సమాచారం విజయవంతంగా ప్రచురించబడింది!");
+    }
+
+    // Quick Event Registration Alert
+    function registerEvent(eventName) {
+      const msg = (currentLanguage === 'en')
+        ? `Thank you for registering for "${eventName}". Our coordinator will contact you via WhatsApp.`
+        : `"${eventName}" కార్యక్రమంలో మీ పేరు నమోదు చేయబడింది. మా ప్రతినిధి వాట్సాప్ ద్వారా వివరాలు అందిస్తారు.`;
+      alert(msg);
+    }
+
+    // Share article helper
+    function shareArticle(title) {
+      if (navigator.share) {
+        navigator.share({
+          title: title,
+          text: `Read this update from SSH (Save and Serve the Hindu): ${title}`,
+          url: window.location.href
+        }).catch(() => {});
+      } else {
+        navigator.clipboard.writeText(`${title} - Read more on SSH: ${window.location.href}`);
+        alert(currentLanguage === 'en' ? "Link copied to clipboard!" : "లింక్ కాపీ చేయబడింది!");
+      }
+    }
+
+    // Mobile menu toggle
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobile-menu');
+      menu.classList.toggle('hidden');
+    }
+
+    // Initialize application
+    window.addEventListener('DOMContentLoaded', () => {
+      renderNews('all');
+    });
+  </script>
+</body>
+</html>
